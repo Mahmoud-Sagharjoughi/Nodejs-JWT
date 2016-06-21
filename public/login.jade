@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Welcome
+    script(type='text/javascript', src='/jquery/dist/jquery.min.js')
+  body
+    h1 Welcome
+    input.username(type='text', name='username')
+    input.password(type='password', name='password')
+    input#submit(type='button', name='submit', value='login')
+    script.
+      $(document).ready(function () {
+      var username, password;
+      $('#submit').click(function () {
+      username = $('.username').val();
+      password = $('.password').val();
+      $.post("http://localhost:3000/api/login", {
+      user: username,
+      pass: password
+      });
+      });
+      });
