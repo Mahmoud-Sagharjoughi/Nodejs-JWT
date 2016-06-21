@@ -1,7 +1,6 @@
 const mongoose = require('mongoose'),
       bcrypt = require('bcrypt'),
       saltRound = 10;
-var db = mongoose.createConnection('localhost', 'jwt');
 
 // Schema defines how the user data will be stored in MongoDB
 var UserSchema = new mongoose.Schema({
